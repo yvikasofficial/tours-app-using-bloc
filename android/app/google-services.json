@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "927112004849",
+    "firebase_url": "https://group-chat-app-73298.firebaseio.com",
+    "project_id": "group-chat-app-73298",
+    "storage_bucket": "group-chat-app-73298.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927112004849:android:767aec6f9cfe1336e09550",
+        "android_client_info": {
+          "package_name": "com.vikas.toursapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927112004849-qaqs3v3b8a240da8rnogud7g0rrntu45.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vikas.toursapp",
+            "certificate_hash": "576cb6a4ef4399d14443de8e1d0f47482b34c129"
+          }
+        },
+        {
+          "client_id": "927112004849-2bm5ulki5le5jcr2dr27avaup6fiv5ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ0U-oaLEb3Y3zqW2L9cH8Ulm2EOTGSj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927112004849-2bm5ulki5le5jcr2dr27avaup6fiv5ka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927112004849:android:48159403231eda13e09550",
+        "android_client_info": {
+          "package_name": "com.yvikasofficial.groupchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927112004849-5jor7ea0ndp27j5l5tqn9gg95br2trsi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yvikasofficial.groupchat",
+            "certificate_hash": "cdf83e44a20cdc5029632bf8514486fae66bcb52"
+          }
+        },
+        {
+          "client_id": "927112004849-2bm5ulki5le5jcr2dr27avaup6fiv5ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ0U-oaLEb3Y3zqW2L9cH8Ulm2EOTGSj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927112004849-2bm5ulki5le5jcr2dr27avaup6fiv5ka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
