@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:tours_app/config/palette.dart';
 
@@ -20,19 +20,10 @@ kShowElertBox(context, String message,
         onPressed: () => Navigator.pop(context),
         width: 120,
       ),
-      if (resendEmail)
-        DialogButton(
-          color: Colors.greenAccent,
-          child: Text(
-            "Resend Email",
-            style: TextStyle(color: Colors.white, fontSize: 15),
-          ),
-          onPressed: () {
-            FirebaseAuth.instance.currentUser.sendEmailVerification();
-            Navigator.pop(context);
-          },
-          width: 120,
-        ),
     ],
   ).show();
+}
+
+kRoute(Widget widget) {
+  Get.to(widget, transition: Transition.cupertino);
 }

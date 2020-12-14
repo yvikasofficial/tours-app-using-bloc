@@ -8,20 +8,22 @@ class MyTextField extends StatefulWidget {
   final int minLength;
   final int maxLength;
   final String hintText;
-  final bool isDisabled;
   final String value;
+  final Function onLocate;
   final bool isNum;
   final TextEditingController textEditingController;
+  final bool showLocate;
   MyTextField(
       {@required this.icon,
       @required this.hintText,
       this.textEditingController,
-      this.isDisabled,
+      this.onLocate,
       this.isEmail = false,
       this.value,
       this.maxLength = 30,
       this.isNum = false,
       this.isPassword = false,
+      this.showLocate = false,
       this.minLength = 3});
   @override
   _MyTextFieldState createState() => _MyTextFieldState();
@@ -31,6 +33,11 @@ class _MyTextFieldState extends State<MyTextField> {
   bool isVisible = true;
 
   _handleShowSuffixIcon() {
+    if (widget.showLocate) {
+      return IconButton(
+          onPressed: widget.onLocate,
+          icon: Icon(Icons.location_searching_sharp));
+    }
     if (widget.isPassword) {
       if (isVisible) {
         return IconButton(
@@ -70,7 +77,6 @@ class _MyTextFieldState extends State<MyTextField> {
           style: TextStyle(
             fontSize: 18,
           ),
-          enabled: widget.isDisabled,
           validator: widget.isEmail
               ? ValidationBuilder().email().maxLength(50).build()
               : ValidationBuilder()

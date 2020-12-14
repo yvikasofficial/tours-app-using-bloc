@@ -21,3 +21,5 @@ class ErrorUserState extends UserState {
   final String err;
   ErrorUserState({this.err});
 }
+
+class TourUploadedState extends UserState {}

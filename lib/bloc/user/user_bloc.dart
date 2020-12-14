@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 import 'package:tours_app/model/tour.dart';
 import 'package:tours_app/providers/user_provider.dart';
@@ -22,6 +23,8 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       yield* _handleUploadTourData(event.tour);
     } else if (event is DeleteTourData) {
       yield* _handleDeleteTour(event.uid);
+    } else if (event is PushLoadingEvent) {
+      yield LoadingUserState();
     } else {
       yield* _hanldeGetAllTours();
     }
@@ -32,6 +35,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       yield LoadingUserState();
       await userProvider.uploadTourData(tour);
       tours.add(tour);
+      Get.back();
       yield ToursUserState(tours: tours);
     } catch (e) {
       yield ErrorUserState(err: e.message);

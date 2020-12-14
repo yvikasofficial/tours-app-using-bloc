@@ -14,3 +14,5 @@ class DeleteTourData extends UserEvent {
 }
 
 class FetchAllTours extends UserEvent {}
+
+class PushLoadingEvent extends UserEvent {}

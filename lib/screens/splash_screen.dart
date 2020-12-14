@@ -22,10 +22,13 @@ class _SplashScreenState extends State<SplashScreen> {
             body: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  Palette.mainColor,
-                  Palette.secondaryColor,
-                ]),
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Palette.mainColor,
+                      Palette.secondaryColor,
+                    ]),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tours_app/bloc/google-sign-in/google_sign_in_bloc.dart';
+import 'package:tours_app/bloc/user/user_bloc.dart';
 import 'package:tours_app/config/palette.dart';
 import 'package:tours_app/screens/home_screen.dart';
 import 'package:tours_app/screens/splash_screen.dart';
@@ -19,7 +20,9 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => GoogleSignInBloc()..add(AppStartedEvent()))
+          create: (context) => GoogleSignInBloc()..add(AppStartedEvent()),
+        ),
+        BlocProvider(create: (context) => UserBloc()),
       ],
       child: GetMaterialApp(
         title: 'Flutter Demo',
