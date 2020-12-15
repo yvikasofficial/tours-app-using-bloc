@@ -49,14 +49,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _handelHomeScreen(UserState state) {
     if (state is ToursUserState) {
-      if (state.tours != null)
+      if (state.tours != null && state.tours.length != 0)
         return ListView.builder(
             itemCount: state.tours.length,
             itemBuilder: (context, index) {
               return TourCard(tour: state.tours[index]);
             });
       else
-        return Text("No Images!");
+        return _noImages();
     } else if (state is LoadingUserState) {
       return Center(
         child: Container(
@@ -66,6 +66,29 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       );
     }
+  }
+
+  _noImages() {
+    return Container(
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.add_a_photo,
+            color: Colors.black26,
+            size: 50,
+          ),
+          Text(
+            "Press + to add new tour",
+            style: TextStyle(
+              color: Colors.black26,
+              fontSize: 20,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 

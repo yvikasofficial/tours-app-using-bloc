@@ -25,12 +25,13 @@ class _AddTourScreenState extends State<AddTourScreen> {
   final _desController = TextEditingController();
   final _locationController = TextEditingController();
   File _file;
+  bool isLoading = false;
   final apiKey = "9cba07fb348441adb0135bc2650424f6";
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<UserBloc, UserState>(builder: (context, state) {
       return LoadingWidget(
-        isLoading: state.isLoading,
+        isLoading: state.isLoading || isLoading,
         child: Scaffold(
           appBar: AppBar(
             title: Text("Add New Tour"),
@@ -138,10 +139,16 @@ class _AddTourScreenState extends State<AddTourScreen> {
   }
 
   _handleShowPos() async {
+    setState(() {
+      isLoading = true;
+    });
     final Position pos = await _determinePosition();
     final res = await http.get(
         'https://api.opencagedata.com/geocode/v1/json?q=${pos.latitude}+${pos.longitude}&key=${apiKey}');
     var data = json.decode(res.body)['results'][0]["components"];
     _locationController.text = data["town"] + "," + data["state_district"];
+    setState(() {
+      isLoading = false;
+    });
   }
 }

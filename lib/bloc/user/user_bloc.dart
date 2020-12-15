@@ -34,6 +34,9 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     try {
       yield LoadingUserState();
       await userProvider.uploadTourData(tour);
+      if (tours == null) {
+        tours = [];
+      }
       tours.add(tour);
       Get.back();
       yield ToursUserState(tours: tours);
